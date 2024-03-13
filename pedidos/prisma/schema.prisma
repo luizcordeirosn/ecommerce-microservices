@@ -13,10 +13,18 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Costumer {
+model Customer {
   id         String @id @default(uuid())
   externalId String @map("external_id")
   email      String @unique
 
-  @@map("costumers")
+  @@map("customers")
+}
+
+model Product {
+  id         String @id @default(uuid())
+  externalId String @map("external_id")
+  code       String
+
+  @@map("products")
 }

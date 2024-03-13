@@ -1,1 +1,2 @@
-import './create-costumers.consumer';
+import './create-customer.consumer';
+import './create-product.consumer';

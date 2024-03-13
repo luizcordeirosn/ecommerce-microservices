@@ -1,8 +1,8 @@
 import { kafka } from ".";
 
-export const kafkaConsumer = async (topic: string) => {
+export const kafkaConsumer = async (topic: string, groupId: string) => {
   const consumer = kafka.consumer({
-    groupId: "order_app",
+    groupId,
   });
   await consumer.connect();
 
