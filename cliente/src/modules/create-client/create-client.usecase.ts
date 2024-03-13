@@ -1,4 +1,5 @@
-import { prismaClient } from "../../infra/database/PrismaClient";
+import { prismaClient } from "../../infra/database/prismaClient";
+import { KafkaSendMessage } from "../../infra/providers/kafka/producer";
 
 type CreateClientRequest = {
   name: string;
@@ -21,10 +22,15 @@ export class CreateClientUseCase {
       throw new Error("Costumer already exists!");
     }
 
-    return await prismaClient.client.create({
+    const customerCreated = await prismaClient.client.create({
       data: {
         ...data,
       },
     });
+
+    const kafkaProducer = new KafkaSendMessage();
+    await kafkaProducer.execute("customer_created", customerCreated);
+
+    return customerCreated;
   }
 }
