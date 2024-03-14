@@ -1,3 +1,3 @@
-# MS APPLICATION
+# MICROSERVICES APPLICATION
 
-Projeto no PostgreSQL com exemplos para prática e aprendizagem do mesmo.
+Projeto para construir aplicação com microserviços em NodeJS utilizando Kafka.
