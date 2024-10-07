@@ -1,3 +1,3 @@
-# MICROSERVICES APPLICATION
+# Microserviço para e-commerce
 
-Projeto para construir aplicação com microserviços em NodeJS utilizando Kafka.
+Este projeto visa a construção de uma aplicação baseada em arquitetura de microserviços utilizando Node.js e Kafka para mensageria.
